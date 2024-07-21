@@ -1,0 +1,169 @@
+CREATE TABLE Category (
+    CategoryId INT PRIMARY KEY,
+    CategoryName VARCHAR(50) NOT NULL
+);
+__________________________________________________________________________________________________
+INSERT INTO Category (CategoryId, CategoryName) VALUES
+    (1, 'Vegetable'),
+    (2, 'Fruit'),
+    (3, 'Nuts'),
+    (4, 'Grains')
+    (5, 'Drinks');
+
+__________________________________________________________________________________________________
+-- Create Vegetable table
+CREATE TABLE Vegetable (
+    VegId INT PRIMARY KEY,
+    VegName VARCHAR(50) NOT NULL,
+    NetWeight FLOAT,
+    VegCalorie FLOAT,
+    CategoryId INT,
+    FOREIGN KEY (CategoryId) REFERENCES Category(CategoryId)
+)
+_________________________________________________________________________________________________
+-- Insert values for Vegetable table
+INSERT INTO Vegetable (VegId, VegName, NetWeight, VegCalorie, CategoryId) VALUES
+    (1, 'Carrot', 100, 41, 1),       -- Vegetable category
+    (2, 'Spinach', 100, 23, 1),      -- Vegetable category
+    (3, 'Tomato', 100, 18, 1),       -- Vegetable category
+    (4, 'Broccoli', 100, 55, 1),     -- Vegetable category
+    (5, 'Cucumber', 100, 16, 1),     -- Vegetable category
+    (6, 'Bell Pepper', 100, 25, 1),  -- Vegetable category
+    (7, 'Zucchini', 100, 33, 1),     -- Vegetable category
+    (8, 'Lettuce', 100, 5, 1),       -- Vegetable category
+    (9, 'Cabbage', 100, 22, 1),      -- Vegetable category
+    (10, 'Kale', 100, 33, 1),        -- Vegetable category
+    (11, 'Cauliflower', 100, 25, 1), -- Vegetable category
+    (12, 'Asparagus', 100, 20, 1),   -- Vegetable category
+    (13, 'Green Beans', 100, 31, 1), -- Vegetable category
+    (14, 'Brussels Sprouts', 100, 43, 1), -- Vegetable category
+    (15, 'Eggplant', 100, 20, 1),   -- Vegetable category
+    (16, 'Potato', 100, 77, 1),      -- Vegetable category
+    (17, 'Sweet Potato', 100, 86, 1),-- Vegetable category
+    (18, 'Onion', 100, 40, 1),      -- Vegetable category
+    (19, 'Garlic', 100, 149, 1),     -- Vegetable category
+    (20, 'Mushroom', 100, 21, 1);   -- Vegetable category
+
+_____________________________________________________________________________________________________
+
+-- Create Fruit table
+CREATE TABLE Fruit (
+    FruitId INT PRIMARY KEY,
+    FruitName VARCHAR(50) NOT NULL,
+    NetWeight FLOAT,
+    FruitCalorie FLOAT,
+    CategoryId INT,
+    FOREIGN KEY (CategoryId) REFERENCES Category(CategoryId)
+);
+
+-- Insert values for Fruit table
+INSERT INTO Fruit (FruitId, FruitName, NetWeight, FruitCalorie, CategoryId) VALUES
+    (1, 'Apple', 100, 52, 2),          -- Fruit category
+    (2, 'Banana', 100, 105, 2),        -- Fruit category
+    (3, 'Orange', 100, 47, 2),         -- Fruit category
+    (4, 'Grapes', 100, 69, 2),         -- Fruit category
+    (5, 'Strawberry', 100, 4, 2),      -- Fruit category
+    (6, 'Watermelon', 100, 30, 2),     -- Fruit category
+    (7, 'Mango', 100, 60, 2),          -- Fruit category
+    (8, 'Pineapple', 100, 50, 2),      -- Fruit category
+    (9, 'Kiwi', 100, 61, 2),           -- Fruit category
+    (10, 'Peach', 100, 59, 2),         -- Fruit category
+    (11, 'Plum', 100, 46, 2),          -- Fruit category
+    (12, 'Cherry', 100, 50, 2),        -- Fruit category
+    (13, 'Pear', 100, 57, 2),          -- Fruit category
+    (14, 'Grapefruit', 100, 52, 2),    -- Fruit category
+    (15, 'Cantaloupe', 100, 34, 2),    -- Fruit category
+    (16, 'Blueberry', 100, 57, 2),     -- Fruit category
+    (17, 'Raspberry', 100, 64, 2),     -- Fruit category
+    (18, 'Blackberry', 100, 43, 2),    -- Fruit category
+    (19, 'Apricot', 100, 17, 2),       -- Fruit category
+    (20, 'Coconut', 100, 354, 2);      -- Fruit category
+
+___________________________________________________________________________________________________________
+
+-- Create Nuts table
+CREATE TABLE Nuts (
+    NutId INT PRIMARY KEY,
+    NutName VARCHAR(50) NOT NULL,
+    NetWeight FLOAT,
+    NutCalorie FLOAT,
+    CategoryId INT,
+    FOREIGN KEY (CategoryId) REFERENCES Category(CategoryId)
+);
+
+-- Insert values for Nuts table
+INSERT INTO Nuts (NutId, NutName, NetWeight, NutCalorie, CategoryId) VALUES
+    (1, 'Almonds', 30, 7, 3),        -- Nuts category
+    (2, 'Walnuts', 30, 7, 3),        -- Nuts category
+    (3, 'Cashews', 30, 8, 3),        -- Nuts category
+    (4, 'Peanuts', 30, 4, 3),        -- Nuts category
+    (5, 'Pistachios', 30, 5, 3),     -- Nuts category
+    (6, 'Hazelnuts', 30, 6, 3),      -- Nuts category
+    (7, 'Brazil Nuts', 30, 8, 3),    -- Nuts category
+    (8, 'Macadamia Nuts', 30, 7, 3), -- Nuts category
+    (9, 'Pecans', 30, 7, 3),         -- Nuts category
+    (10, 'Chestnuts', 30, 131, 3),   -- Nuts category
+    (11, 'Sunflower Seeds', 30, 51, 3),  -- Nuts category
+    (12, 'Pumpkin Seeds', 30, 73, 3),    -- Nuts category
+    (13, 'Flaxseeds', 30, 55, 3),        -- Nuts category
+    (14, 'Chia Seeds', 30, 138, 3),      -- Nuts category
+    (15, 'Sesame Seeds', 30, 52, 3);     -- Nuts category
+
+_____________________________________________________________________________________________________
+-- Create Grains table
+CREATE TABLE Grains (
+    GrainId INT PRIMARY KEY,
+    GrainName VARCHAR(50) NOT NULL,
+    NetWeight FLOAT,
+    GrainCalorie FLOAT,
+    CategoryId INT,
+    FOREIGN KEY (CategoryId) REFERENCES Category(CategoryId)
+);
+
+-- Insert values for Grains table
+INSERT INTO Grains (GrainId, GrainName, NetWeight, GrainCalorie, CategoryId) VALUES
+    (1, 'Rice', 100, 205, 4),          -- Grains category
+    (2, 'Wheat', 100, 327, 4),         -- Grains category
+    (3, 'Ragi (Finger Millet)', 100, 336, 4), -- Grains category
+    (4, 'Jowar (Sorghum)', 100, 329, 4),       -- Grains category
+    (5, 'Bajra (Pearl Millet)', 100, 382, 4),  -- Grains category
+    (6, 'Quinoa', 100, 120, 4),                -- Grains category
+    (7, 'Barley', 100, 193, 4),                -- Grains category
+    (8, 'Oats', 100, 68, 4),                   -- Grains category
+    (9, 'Corn', 100, 96, 4),                   -- Grains category
+    (10, 'Brown Rice', 100, 215, 4),           -- Grains category
+    (11, 'Maize', 100, 143, 4),                -- Grains category
+    (12, 'Buckwheat', 100, 343, 4),            -- Grains category
+    (13, 'Semolina (Sooji)', 100, 360, 4),     -- Grains category
+    (14, 'Millet (Bajra)', 100, 383, 4),       -- Grains category
+    (15, 'Amaranth (Rajgira)', 100, 371, 4);   -- Grains category
+
+______________________________________________________________________________________________________
+-- Create Drinks table
+CREATE TABLE Drinks (
+    DrinkId INT PRIMARY KEY,
+    DrinkName VARCHAR(50) NOT NULL,
+    Volume FLOAT,
+    DrinkCalorie FLOAT,
+    CategoryId INT,
+    FOREIGN KEY (CategoryId) REFERENCES Category(CategoryId)
+);
+
+-- Insert values for Drinks table
+INSERT INTO Drinks (DrinkId, DrinkName, Volume, DrinkCalorie, CategoryId) VALUES
+    (1, 'Water', 250, 0, 5),           -- Drinks category
+    (2, 'Green Tea', 240, 2, 5),       -- Drinks category
+    (3, 'Black Coffee', 240, 2, 5),    -- Drinks category
+    (4, 'Milk', 240, 103, 5),          -- Drinks category
+    (5, 'Orange Juice', 240, 110, 5),  -- Drinks category
+    (6, 'Apple Juice', 240, 114, 5),   -- Drinks category
+    (7, 'Carrot Juice', 240, 80, 5),   -- Drinks category
+    (8, 'Coconut Water', 240, 46, 5), -- Drinks category
+    (9, 'Lemonade', 240, 99, 5),      -- Drinks category
+    (10, 'Vegetable Smoothie', 240, 150, 5),  -- Drinks category
+    (11, 'Protein Shake', 240, 200, 5),      -- Drinks category
+    (12, 'Iced Tea', 240, 90, 5),    -- Drinks category
+    (13, 'Soda', 355, 140, 5),       -- Drinks category
+    (14, 'Cranberry Juice', 240, 110, 5),   -- Drinks category
+    (15, 'Pomegranate Juice', 240, 134, 5);-- Drinks category
+_________________________________________________________________________________________________________
